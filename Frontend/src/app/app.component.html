@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row col-md-12">
+
+    <h3 class="heading mb-5">SOCIAL POST & HASHTAGS GENERATOR</h3>
+    <div class="col-md-6">
+      <h5 class="heading-sub">Post</h5>
+      <div class="mb-4">
+        <label>Select Social Network</label>
+        <nz-select class="dropdown" [(ngModel)]="postSelection">
+          <nz-option  *ngFor='let socialNetwork of socialNetworks' [nzValue]="socialNetwork" [nzLabel]="socialNetwork"></nz-option>
+          
+        </nz-select>
+      </div>
+      <div class="mb-4">
+        <label>Post Content</label>
+        <textarea rows="4" nz-input [(ngModel)]="postSearchInput"></textarea>
+      </div>
+      <div class="mb-4">
+        <button [disabled]="!postSearchInput || !postSelection" (click)="postSearch()" nz-button nzType="primary" nzBlock>Search</button>
+      </div>
+      <div >
+        <h5 class="heading-sub">Result</h5>  
+        <p *ngIf="postResult">
+            {{postResult}}
+          </p>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h5 class="heading-sub">HashTags</h5>
+      <div class="mb-4">
+        <label>Select Social Network</label>
+        <nz-select class="dropdown" [(ngModel)]="hashtagSelection">
+          <nz-option   nzValue="Instagram" nzLabel="Instagram"></nz-option>
+          <nz-option  *ngFor='let socialNetwork of socialNetworks' [nzValue]="socialNetwork" [nzLabel]="socialNetwork"></nz-option>
+        </nz-select>
+      </div>
+      <div class="mb-4">
+        <label>Hashtags Content</label>
+        <textarea rows="4" nz-input [(ngModel)]="hashtagSearchInput"></textarea>
+
+      </div>
+      <div class="mb-4">
+        <button [disabled]="!hashtagSearchInput || !hashtagSelection" (click)="hashtagSearch()" nz-button nzType="primary" nzBlock>Search</button>
+      </div>
+      <div>
+        <h5 class="heading-sub">Result</h5>
+        <p *ngIf="hashtagResult">
+          {{hashtagResult}}
+        </p>
+    </div>
+    </div>
+  </div>
+</div>

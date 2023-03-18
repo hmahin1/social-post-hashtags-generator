@@ -1,0 +1,18 @@
+.container {
+    margin-top: 50px;
+  }
+  
+  .col {
+    border: 1px solid #ccc;
+    padding: 20px;
+  }
+
+  .heading{
+    text-align: center;
+  }
+  .dropdown{
+    width: 100%;
+  }
+  .heading-sub{
+    text-align: center;
+  }
